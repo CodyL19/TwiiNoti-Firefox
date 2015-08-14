@@ -1,0 +1,12 @@
+{
+  "title": "TwiiNoti for Firefox",
+  "name": "twiinoti-firefox",
+  "version": "0.0.1",
+  "description": "Twii's official Notification add-on for the Firefox Browser",
+  "main": "index.js",
+  "author": "Cody L.",
+  "engines": {
+    "firefox": ">=38.0a1"
+  },
+  "license": "MIT"
+}
