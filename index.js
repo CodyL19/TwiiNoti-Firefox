@@ -1,17 +1,34 @@
-var buttons = require('sdk/ui/button/action');
-var tabs = require("sdk/tabs");
+var { ToggleButton } = require('sdk/ui/button/toggle');
+var panels = require("sdk/panel");
+var self = require("sdk/self");
 
-var button = buttons.ActionButton({
-    id: "mozilla-link",
-    label: "Visit Mozilla",
+var button = ToggleButton({
+    id: "twiinoti",
+    label: "TwiiNoti \n ----------------------\n Current Account:\n @User\n \n[0 New Notifications] \n[0 New Messages]",
     icon: {
-        "16": "./assets/images/icons/icon-16.png",
-        "32": "./assets/images/icons/icon-32.png",
-        "64": "./assets/images/icons/icon-64.png"
+        "16": "./assets/images/twiilogo.png",
+        "32": "./assets/images/twiilogo.png",
+        "64": "./assets/images/twiilogo.png"
     },
-    onClick: handleClick
+    onChange: handleChange
 });
 
-function handleClick(state) {
-    tabs.open("http://www.mozilla.org/");
+var panel = panels.Panel({
+    contentURL: self.data.url("panel.html"),
+    contentScriptURL: "./assets/scripts/background.js",
+    onHide: handleHide,
+    width: 416,
+    height: 540
+});
+
+function handleChange(state) {
+    if (state.checked) {
+        panel.show({
+            position: button
+        });
+    }
+}
+
+function handleHide() {
+    button.state('window', {checked: false});
 }

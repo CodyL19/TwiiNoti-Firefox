@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="assets/styles/style.css" rel="stylesheet">
+        <script src="assets/scripts/jquery.js" type="text/javascript"></script>
+        <script src="assets/scripts/fn.js" type="text/javascript"></script>
+        <script src="assets/scripts/interface.js" type="text/javascript"></script>
+        <script src="assets/scripts/background.js" type="text/javascript"></script>
+    </head>
+    <body class="flex flex_col">
+        <header class="flex_fix_col flex">
+            <div id="sToggle" class="flex_fix">&#xe601;<span class="count">2</span></div>
+            <div id="title" class="flex_fill notifications">Notifications <span class="notinum"></span></div>
+            <div id="title" class="flex_fill messages">Messages <span class="notinum"></span></div>
+            <div id="title" class="flex_fill status">Post a status</div>
+            <div id="title" class="flex_fill connect">Connect an account</div>
+        </header>
+        <div class="flex flex_fill_col">
+            <nav class="flex_fix flex flex_col">
+                <div id="top" class="flex_fill_col">
+                    <div id="account"><img src="assets/images/twiilogo.png"><span class="title">@username</span></div>
+                    <div id="notifications" class="on">&#xe605;<span class="count"></span><span class="title">Notifications</span></div>
+                    <div id="messages" class="">&#xe604;<span class="count"></span><span class="title">Messages</span></div>
+                    <div id="status" class="">&#xe907;<span class="title">Post a status</span></div>
+                </div>
+                <div id="bottom" class="flex_fix_col">
+                    <div id="bugs">&#xe999;<span class="title">Report a bug</span></div>
+                    <div id="logout">&#xe9b7;<span class="title">Logout</span></div>
+                </div>
+            </nav>
+            <main class="flex_fill">
+                <!--Connect-->
+                <div id="connect">
+                    <span>Thank you for using TwiiNoti! To get started just click the button below and follow the instructions in the new window.</span>
+                    <button>Link an account with Twii </button>
+                </div>
+                <!--Notifications-->
+                <div id="notifications">
+                    <div id="noti" class="flex">
+                        <div id="avatar" class="flex_fix"><img src="assets/images/twiilogo.png"></div>
+                        <div id="con" class="flex_fill">
+                            <div id="message">
+                                <a href="" target="_blank">Twii Noti</a> just commented
+                                <span class="quote">"Blah Blah Blah Blah"</span> on your status.
+                                <a href="" target="_blank">View Status</a>
+                            </div>
+                            <div id="time">1 hour ago</div>
+                        </div>
+                    </div>
+                </div>
+                <!--Messages-->
+                <div id="messages">
+                    <div id="mess" class="flex">
+                        <div id="avatar" class="flex_fix"><img src="assets/images/twiilogo.png"></div>
+                        <div id="con" class="flex_fill">
+                            <div id="username">Twii Noti</div>
+                            <div id="message">Some message from someone.</div>
+                        </div>
+                    </div>
+                </div>
+                <!--Status-->
+                <div id="status">
+                    <div class="disclaimer">
+                        Your status is expected to abide by Twii's <a href="https://www.twii.me/co/category/legal" target="_blank">Code of Conduct</a>
+                    </div>
+                    <div id="stat" class="flex">
+                        <div id="con" class="flex_fill">
+                            <div><textarea></textarea></div>
+                            <div style="margin-top:5px;">
+                                <button>Post</button>
+                                <span class="textCount">120</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </body>
+</html>
