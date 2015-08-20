@@ -1,6 +1,10 @@
-var panelWidth = $('body').width();
+var panelWidth  = $('body').width();
 var panelHeight = $('body').height();
 
-var size = {width: panelWidth, height: panelHeight};
+addon.port.on("shown", function() {
+    addon.port.emit('alert', "is connected");
+});
 
-self.postMessage(size);
+addon.port.on("alert", function(message){
+    console.log("Connected: "+message);
+});
