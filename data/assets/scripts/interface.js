@@ -1,6 +1,6 @@
 $(function(){
 
-    if (localStorage.getItem("connected")){ // If a user is not connected
+    if (!localStorage.getItem("connected")){ // If a user is not connected
         $('nav').css("margin-left", "-43px").hide();
         $('header #title, main div').hide();
         $('header .connect, main #connect').show();
@@ -9,7 +9,7 @@ $(function(){
 
         // Set the defaults for when logged in
         $('body').css('height','540px');
-        $('main #connect, #header .connect').hide();
+        $('main #connect, header .connect').hide();
         $('#sToggle').show();
 
         // Use sidebar state of last time

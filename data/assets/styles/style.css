@@ -11,6 +11,7 @@ body {
     height:196px;
     outline:none;
     background:#fff;
+    overflow: none;
 }
 
 body::before{
@@ -37,6 +38,8 @@ header {
     border-top-left-radius: 2px;
     border-top-right-radius: 2px;
 }
+
+main #notifictations, main #messages {overflow:auto;}
 
 #sToggle {
     font-family: icomoon;
@@ -65,7 +68,7 @@ header {
 #noti:hover > #avatar, #mess:hover > #avatar, #noti.on, #mess.on, #noti:hover, #mess:hover{ filter:grayscale(0%) brightness(100%) !important; color:#6a6a6a !important;}
 
 #noti.on, #mess.on { background:#fff !important; }
-
+#top #messages {overflow:none;}
 #noti, #mess {
     -moz-user-select:none;
     padding:10px;
