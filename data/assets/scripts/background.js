@@ -13,7 +13,7 @@ addon.port.on("foo", function() {
     // Connected page height : addon.port.emit('height', 546);
 
     if(!localStorage.getItem('connected')){ // Is a connection saved?
-      addon.port.emit('height', 202);
+      addon.port.emit('height', 202); 
 
       // URL Structure for creating a new connection: https://www.twii.me/mpb/connect/?apikey={PUBLIC_KEY}&apicode={TEMP_CODE}
       $('#connect button').click(function(){ addon.port.emit("firstConnection"); }); // Create a new connection

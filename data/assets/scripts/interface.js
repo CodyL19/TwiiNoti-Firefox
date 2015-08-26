@@ -8,7 +8,7 @@ $(function(){
     } else { // if a user is connected
 
         // Set the defaults for when logged in
-        $('body').css('height','540px');
+        $('body').css('height','540px'); 
         $('main #connect, header .connect').hide();
         $('#sToggle').show();
 

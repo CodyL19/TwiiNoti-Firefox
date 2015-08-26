@@ -10,22 +10,22 @@ var Request        = require("sdk/request").Request;
 
 var button = ToggleButton({ // the button used to open the panel.
                id     : "twiinoti",
-	   				 	 label  : "TwiiNoti \n ----------------------\n Current Account:\n @User\n \n[0 New Notifications] \n[0 New Messages]",
-	   				 	 icon   : {
-								 						"16" : "./assets/images/twiilogo.png",
-														"32" : "./assets/images/twiilogo.png",
-														"64" : "./assets/images/twiilogo.png"
-													},
-	    			 	 onChange : handleChange
-     				 });
+                 label  : "TwiiNoti \n ----------------------\n Current Account:\n @User\n \n[0 New Notifications] \n[0 New Messages]", 
+                 icon   : {
+                             "16" : "./assets/images/twiilogo.png",
+                            "32" : "./assets/images/twiilogo.png",
+                            "64" : "./assets/images/twiilogo.png"
+                          },
+                onChange : handleChange
+              });
 
 var panel = panels.Panel({ // Create the Main addon-panel
-						  contentURL       : self.data.url("panel.html"),
-							contentScriptURL : "./assets/scripts/background.js",
-							onHide           : handleHide,
-							width            : 416,
-							height           : 202
-						});
+              contentURL       : self.data.url("panel.html"),
+              contentScriptURL : "./assets/scripts/background.js",
+              onHide           : handleHide,
+              width            : 416,
+              height           : 202
+            });
 
 function handleChange(state) { if (state.checked) { panel.show({ position: button });} }
 
@@ -34,7 +34,7 @@ function handleChange(state) { if (state.checked) { panel.show({ position: butto
 panel.on("show", function() { panel.port.emit("foo"); }); // Tell Panel when it's okay to start sending messages
 
 panel.port.on("height", function(height){ // Height is variable depending one weather connected to an account (at least one) or not.
-	panel.resize(416, height);
+  panel.resize(416, height);
 });
 
 // Genorates a temporary key to authenticate the user.
@@ -45,11 +45,11 @@ panel.port.on("firstConnection", function(){ // When the user clicks the button 
   tempKey = randomString(16, '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ-_');
 
   var connect = panels.Panel({ // Creates a panel to authenticate
-  						  contentURL       : "http://www.twii.me/mpb/connect/?apikey="+ pubKey +"&apicode="+ tempKey,
-  							onHide           : connectHide,
-  							width            : 600,
-  							height           : 500
-  						});
+                contentURL       : "http://www.twii.me/mpb/connect/?apikey="+ pubKey +"&apicode="+ tempKey,
+                onHide           : connectHide,
+                width            : 600,
+                height           : 500
+              });
 
   connect.show();
   function connectHide(){ // Start sending requests and check for the user's info.
@@ -60,7 +60,7 @@ panel.port.on("firstConnection", function(){ // When the user clicks the button 
     //     var tweet = response.json[0];
     //   }
     // });
-    
+
   }
 
 });
