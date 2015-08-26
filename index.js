@@ -10,9 +10,9 @@ var Request        = require("sdk/request").Request;
 
 var button = ToggleButton({ // the button used to open the panel.
                id     : "twiinoti",
-                 label  : "TwiiNoti \n ----------------------\n Current Account:\n @User\n \n[0 New Notifications] \n[0 New Messages]", 
-                 icon   : {
-                             "16" : "./assets/images/twiilogo.png",
+               label  : "TwiiNoti \n ----------------------\n Current Account:\n @User\n \n[0 New Notifications] \n[0 New Messages]",
+               icon   : {
+                            "16" : "./assets/images/twiilogo.png",
                             "32" : "./assets/images/twiilogo.png",
                             "64" : "./assets/images/twiilogo.png"
                           },
